@@ -203,17 +203,4 @@ npm run dev
 
 ---
 
-## 👨‍💻 Team NeuralNinjas
 
-Built with passion for **AI, data, and user-centric design** 💙
-This project demonstrates real-world full-stack development with AI integration.
-
-👥 Team Members – NeuralNinjas
-
-Isha Samant
-
-Shraddha Desai
-
-Parth Banayet
-
-Soham Prabhudesai
