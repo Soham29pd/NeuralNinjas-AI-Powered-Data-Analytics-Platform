@@ -1,0 +1,218 @@
+/* ===== Global Reset & Height Fix ===== */
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background: #020617;
+  color: #e0e7ff;
+}
+
+/* ===== App Layout ===== */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Main Content Area ===== */
+.content-area {
+  flex: 1;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 24px;
+  background: radial-gradient(circle at top left, #020617, #0f172a 60%);
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  box-sizing: border-box;
+}
+
+/* ===== Dashboard Header Styling ===== */
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.dashboard-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #e0e7ff;
+}
+
+/* ===== Buttons (e.g., Refresh) ===== */
+.refresh-btn {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  border: none;
+  border-radius: 14px;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #020617;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.refresh-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(99, 102, 241, 0.6);
+}
+
+.refresh-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===== Stats Grid ===== */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  flex-shrink: 0;
+}
+
+/* ===== Card Styling ===== */
+.card {
+  background: linear-gradient(160deg, #020617, #0f172a);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #c7d2fe;
+  margin-bottom: 8px;
+}
+
+.card-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e0e7ff;
+}
+
+.card-trend {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #22d3ee;
+  margin-top: 4px;
+}
+
+/* ===== Chart Section Styling ===== */
+.chart-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #020617, #0f172a);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.6), inset 0 0 0 1px rgba(255,255,255,0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.chart-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #6366f1, #22d3ee, #a78bfa);
+}
+
+.chart-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #c7d2fe;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-section h3::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(99,102,241,0.9);
+}
+
+.chart-wrapper {
+  flex: 1;
+  width: 100%;
+}
+
+/* ===== Recharts Tooltip Overrides ===== */
+.recharts-cartesian-axis-tick text {
+  fill: #94a3b8;
+  font-size: 0.75rem;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  background: rgba(15,23,42,0.95) !important;
+  border: 1px solid rgba(99,102,241,0.35) !important;
+  border-radius: 12px !important;
+  padding: 10px 12px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.recharts-tooltip-label {
+  color: #c7d2fe !important;
+  font-weight: 600;
+}
+
+.recharts-tooltip-item {
+  color: #22d3ee !important;
+  font-size: 0.8rem;
+}
+
+.recharts-cartesian-grid line {
+  stroke: rgba(148,163,184,0.12);
+}
+
+/* ===== Responsive Styling ===== */
+@media (max-width: 1024px) {
+  .content-area {
+    padding: 16px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .chart-section {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .refresh-btn {
+    width: 100%;
+  }
+}

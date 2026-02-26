@@ -1,0 +1,125 @@
+/* PersonalizedDashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+.personalized-theme {
+    --bg-primary: #050511;
+    --bg-card: #0a0a23;
+    --accent-glow: #7b2cbf;
+    --text-primary: #e0e0e0;
+    --neon-blue: #00f3ff;
+    --neon-pink: #bc13fe;
+    --glass-border: rgba(255, 255, 255, 0.08);
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-primary);
+    min-height: 100vh;
+    color: var(--text-primary);
+    padding: 2rem;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(123, 44, 191, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.1) 0%, transparent 40%);
+}
+
+.personalized-theme .dashboard-header h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(to right, #fff, #a5b4fc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.personalized-theme .insight-hero {
+    background: rgba(123, 44, 191, 0.1);
+    border: 1px solid var(--neon-pink);
+    box-shadow: 0 0 15px rgba(188, 19, 254, 0.3);
+}
+
+.p-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.p-card {
+    background: rgba(10, 10, 35, 0.6);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.p-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.p-card h3 {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.p-card .metric-check {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-pink));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.span-4 {
+    grid-column: span 4;
+}
+
+.span-6 {
+    grid-column: span 6;
+}
+
+.span-8 {
+    grid-column: span 8;
+}
+
+.span-12 {
+    grid-column: span 12;
+}
+
+/* Widget Specifics */
+.goal-tracker {
+    border-top: 3px solid var(--neon-blue);
+}
+
+.pain-point-solver {
+    border-top: 3px solid var(--neon-pink);
+}
+
+.platform-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.platform-pill.active {
+    background: rgba(0, 243, 255, 0.15);
+    border-color: var(--neon-blue);
+    color: var(--neon-blue);
+}
+
+.genie-wish {
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.4), rgba(10, 10, 35, 0.8));
+    border: 1px solid var(--accent-glow);
+}

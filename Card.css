@@ -1,0 +1,94 @@
+/* ===== Statistic Card ===== */
+.stat-card {
+  background: linear-gradient(160deg, #020617, #0f172a);
+  border-radius: 18px;
+  padding: 18px 20px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover lift */
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 18px 50px rgba(99, 102, 241, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Top accent glow */
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #22d3ee,
+    #a78bfa
+  );
+}
+
+/* ===== Card Title ===== */
+.card-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #94a3b8;
+  text-transform: uppercase;
+}
+
+/* ===== Main Value ===== */
+.card-value {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 2px 0 4px;
+  color: #e0e7ff;
+}
+
+/* ===== Trend Text ===== */
+.card-trend {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #fca5a5;
+  letter-spacing: 0.2px;
+}
+
+/* Positive Trend */
+.card-trend.positive {
+  color: #22d3ee;
+}
+
+/* Optional arrow using CSS */
+.card-trend::before {
+  content: "▼";
+  margin-right: 6px;
+  font-size: 0.75rem;
+}
+
+/* Up arrow for positive */
+.card-trend.positive::before {
+  content: "▲";
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 16px;
+    min-width: unset;
+  }
+
+  .card-value {
+    font-size: 1.6rem;
+  }
+}

@@ -1,0 +1,256 @@
+/* 
+.top-nav {
+  height: 64px;
+  width: 100%;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: rgba(2, 6, 23, 0.9);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.search-bar {
+  width: 320px;
+  max-width: 45%;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px 14px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 14px;
+
+  font-size: 0.9rem;
+  color: #c7d2fe;
+  outline: none;
+
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+
+.search-bar input::placeholder {
+  color: #64748b;
+}
+
+
+.search-bar input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.25);
+}
+
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+
+.user-profile span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #a5b4fc;
+  letter-spacing: 0.3px;
+}
+
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+  position: relative;
+}
+
+
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: rgba(2, 6, 23, 0.6);
+}
+
+
+.user-profile:hover .avatar {
+  box-shadow: 0 0 18px rgba(34, 211, 238, 0.9);
+}
+
+
+.top-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #22d3ee,
+    #a78bfa
+  );
+}
+
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 220px;
+  }
+
+  .user-profile span {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    max-width: 60%;
+  }
+} */
+/* ===== Top Navigation Bar ===== */
+.top-nav {
+  width: 100%;
+  height: 64px;
+  background: linear-gradient(180deg, #020617, #0f172a);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.6),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ===== Search Bar ===== */
+.search-bar {
+  flex: 1;
+  max-width: 380px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  color: #c7d2fe;
+  outline: none;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Placeholder */
+.search-bar input::placeholder {
+  color: #64748b;
+}
+
+/* Focus state */
+.search-bar input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.25);
+}
+
+/* ===== User Profile Section ===== */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+/* Username */
+.user-profile span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #e0e7ff;
+  letter-spacing: 0.3px;
+}
+
+/* Avatar Circle */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #6366f1,
+    #22d3ee,
+    #a78bfa
+  );
+  box-shadow:
+    0 0 0 2px rgba(15, 23, 42, 0.9),
+    0 6px 20px rgba(99, 102, 241, 0.45);
+  position: relative;
+}
+
+/* Avatar glow pulse */
+.avatar::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(99, 102, 241, 0.6),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.user-profile:hover .avatar::after {
+  opacity: 1;
+}
+
+/* ===== Optional Top Accent Line ===== */
+.top-nav::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #22d3ee,
+    #a78bfa
+  );
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .top-nav {
+    padding: 0 16px;
+  }
+
+  .search-bar {
+    max-width: 240px;
+  }
+
+  .user-profile span {
+    display: none;
+  }
+}

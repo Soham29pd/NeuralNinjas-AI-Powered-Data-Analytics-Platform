@@ -1,0 +1,126 @@
+/* ===== Main Chat Container ===== */
+.chat-box-container {
+  width: 100%;
+  max-width: 420px;
+  height: 520px;
+  background: linear-gradient(160deg, #020617, #0f172a);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+/* ===== Messages Window ===== */
+.messages-window {
+  flex: 1;
+  padding: 18px;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Custom scrollbar */
+.messages-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.messages-window::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #6366f1, #22d3ee);
+  border-radius: 6px;
+}
+
+.messages-window::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ===== Chat Input Area ===== */
+.chat-input-area {
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(2, 6, 23, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+/* ===== Input Field ===== */
+.chat-input-area input {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  border-radius: 14px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  color: #c7d2fe;
+  outline: none;
+  transition: border 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Placeholder */
+.chat-input-area input::placeholder {
+  color: #64748b;
+}
+
+/* Input focus */
+.chat-input-area input:focus {
+  border-color: #22d3ee;
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.25);
+}
+
+/* ===== Send Button ===== */
+.send-btn {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  border: none;
+  border-radius: 14px;
+  padding: 0 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #020617;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+}
+
+/* Button hover */
+.send-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 35px rgba(99, 102, 241, 0.55);
+}
+
+/* Button active */
+.send-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===== Optional Chat Header Glow ===== */
+.chat-box-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #6366f1, #22d3ee, #a78bfa);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .chat-box-container {
+    height: 480px;
+    border-radius: 16px;
+  }
+
+  .chat-input-area {
+    padding: 10px;
+  }
+
+  .send-btn {
+    padding: 0 14px;
+  }
+}

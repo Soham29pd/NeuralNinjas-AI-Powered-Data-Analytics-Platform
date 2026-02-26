@@ -1,0 +1,115 @@
+/* ===== Base Button ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  user-select: none;
+  transition:
+    background 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.2s ease;
+}
+
+/* ===== Primary Button ===== */
+.btn-primary {
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: #020617;
+  box-shadow:
+    0 10px 25px rgba(99, 102, 241, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 40px rgba(99, 102, 241, 0.55);
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+}
+
+/* ===== Secondary Button ===== */
+.btn-secondary {
+  background: rgba(15, 23, 42, 0.9);
+  color: #c7d2fe;
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-secondary:hover {
+  background: rgba(15, 23, 42, 1);
+  box-shadow:
+    0 10px 30px rgba(99, 102, 241, 0.35);
+}
+
+/* ===== Danger Button ===== */
+.btn-danger {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+  color: #020617;
+  box-shadow:
+    0 10px 25px rgba(239, 68, 68, 0.4);
+}
+
+.btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 40px rgba(239, 68, 68, 0.6);
+}
+
+/* ===== Outline Button ===== */
+.btn-outline {
+  background: transparent;
+  color: #22d3ee;
+  border: 1px solid rgba(34, 211, 238, 0.6);
+}
+
+.btn-outline:hover {
+  background: rgba(34, 211, 238, 0.12);
+}
+
+/* ===== Disabled State ===== */
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  box-shadow: none;
+  transform: none;
+}
+
+/* ===== Focus Ring ===== */
+.btn:focus-visible {
+  box-shadow:
+    0 0 0 3px rgba(34, 211, 238, 0.35),
+    0 10px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* ===== Size Variants (Optional) ===== */
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  border-radius: 10px;
+}
+
+.btn-lg {
+  padding: 14px 24px;
+  font-size: 1rem;
+  border-radius: 18px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+  .btn {
+    padding: 9px 14px;
+    font-size: 0.85rem;
+  }
+}

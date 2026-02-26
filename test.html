@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Chatbot Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    .card {
+      background: #1e293b;
+      padding: 30px;
+      border-radius: 12px;
+      width: 500px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    input, textarea {
+      width: 90%;
+      padding: 10px;
+      border-radius: 6px;
+      border: none;
+      margin-top: 10px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      background: #38bdf8;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    pre {
+      text-align: left;
+      background: black;
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 8px;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Backend Health Check</h2>
+    <button onclick="checkBackend()">Check Backend</button>
+    <pre id="backendResult">Click button to test backend</pre>
+  </div>
+
+  <div class="card">
+    <h2>AI Chatbot Test</h2>
+    <textarea id="userQuery" rows="3" placeholder="Type your question here..."></textarea>
+    <button onclick="askAI()">Ask AI</button>
+    <pre id="aiResult">AI response will appear here</pre>
+  </div>
+
+  <script>
+    async function checkBackend() {
+      try {
+        const res = await fetch("http://localhost:8000/");
+        const data = await res.json();
+        document.getElementById("backendResult").textContent =
+          JSON.stringify(data, null, 2);
+      } catch (err) {
+        document.getElementById("backendResult").textContent = "Backend not reachable";
+      }
+    }
+
+    async function askAI() {
+    const question = document.getElementById("questionInput").value;
+
+    const response = await fetch("http://localhost:8000/api/ai/ask", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ question }) // must match AskRequest
+    });
+
+    const data = await response.json();
+    console.log(data);
+    // You can also show data.answer in a div
+}
+
+
+  </script>
+</body>
+</html>

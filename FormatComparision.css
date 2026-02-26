@@ -1,0 +1,109 @@
+/* Root card styling */
+.chart-card {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  border-radius: 18px;
+  padding: 20px 22px;
+  box-shadow: 
+    0 10px 25px rgba(99, 102, 241, 0.15),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover effect */
+.chart-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 
+    0 16px 40px rgba(99, 102, 241, 0.25),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Glow accent strip */
+.chart-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    #6366f1,
+    #22d3ee,
+    #a78bfa
+  );
+}
+
+/* Title styling */
+.chart-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  margin-bottom: 16px;
+  color: #e0e7ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Optional small indicator dot near title */
+.chart-card h3::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.8);
+}
+
+/* Tooltip customization */
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+.recharts-default-tooltip {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border-radius: 10px !important;
+  border: 1px solid rgba(99, 102, 241, 0.35) !important;
+  padding: 10px 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.recharts-tooltip-label {
+  color: #c7d2fe !important;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.recharts-tooltip-item {
+  color: #22d3ee !important;
+  font-size: 0.85rem;
+}
+
+/* Axis text */
+.recharts-cartesian-axis-tick text {
+  fill: #94a3b8;
+  font-size: 0.75rem;
+}
+
+/* Grid lines (if enabled later) */
+.recharts-cartesian-grid line {
+  stroke: rgba(148, 163, 184, 0.15);
+}
+
+/* Bar hover glow */
+.recharts-bar-rectangle:hover {
+  filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.8));
+}
+
+/* Responsive spacing */
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 16px;
+  }
+
+  .chart-card h3 {
+    font-size: 1rem;
+  }
+}
